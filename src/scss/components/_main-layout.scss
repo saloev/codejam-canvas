@@ -1,9 +1,10 @@
 .main-layout {
   display: grid;
-  grid-template-columns: 230px auto;
+  grid-template-columns: 230px auto 230px;
   grid-template-areas:
-    "tools canvas"
-    "color canvas";
+    "tools canvas canvas-size"
+    "color canvas canvas-size";
+  grid-column-gap: 20px;
   grid-row-gap: 40px;
   padding: 40px 30px;
 
@@ -17,5 +18,9 @@
 
   &__canvas {
     grid-area: canvas;
+  }
+
+  &__canvas-size {
+    grid-area: canvas-size;
   }
 }
