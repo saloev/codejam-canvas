@@ -43,5 +43,10 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@material/drawer": "^3.2.0",
+    "@material/list": "^3.2.0",
+    "@material/top-app-bar": "^3.2.0"
   }
 }

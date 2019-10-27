@@ -1,0 +1,21 @@
+.main-layout {
+  display: grid;
+  grid-template-columns: 230px auto;
+  grid-template-areas:
+    "tools canvas"
+    "color canvas";
+  grid-row-gap: 40px;
+  padding: 40px 30px;
+
+  &__tools {
+    grid-area: tools;
+  }
+
+  &__color {
+    grid-area: color;
+  }
+
+  &__canvas {
+    grid-area: canvas;
+  }
+}

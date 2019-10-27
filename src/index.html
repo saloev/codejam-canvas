@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
       rel="stylesheet"
     />
     <title>Document</title>
   </head>
   <body class="body">
-    <main></main>
+    <!-- header -->
+    <%= require('html-loader!./html/header.html') %>
+
+    <main class="main">
+      <div class="main-layout">
+        <!-- tools -->
+        <%= require('html-loader!./html/tools.html') %>
+
+        <!-- colors -->
+        <%= require('html-loader!./html/colors.html') %>
+
+        <!-- canvas -->
+        <%= require('html-loader!./html/canvas.html') %>
+      </div>
+    </main>
   </body>
 </html>
