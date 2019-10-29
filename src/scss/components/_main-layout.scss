@@ -18,6 +18,8 @@
 
   &__canvas {
     grid-area: canvas;
+    // align-self: center;
+    justify-self: center;
   }
 
   &__canvas-size {

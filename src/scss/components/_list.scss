@@ -2,4 +2,31 @@
 
 .mdc-list {
   box-shadow: $panel-box-shadow;
+
+  &-item {
+    &__color {
+      width: 20px;
+      height: 20px;
+      margin-right: 32px;
+
+      border-radius: 50%;
+      border: 1px solid $primary--light;
+
+      &--current {
+        background-color: #c4c4c4;
+      }
+
+      &--previous {
+        background-color: #41f795;
+      }
+
+      &--red {
+        background-color: #f74141;
+      }
+
+      &--blue {
+        background-color: #41b6f7;
+      }
+    }
+  }
 }

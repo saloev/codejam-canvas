@@ -2,5 +2,8 @@ import "./scss/main.scss";
 
 import component from "./js/components/components";
 
-// init components
-component();
+const init = () => {
+  component();
+};
+
+window.addEventListener("DOMContentLoaded", init);
