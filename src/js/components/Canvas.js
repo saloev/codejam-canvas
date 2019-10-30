@@ -6,7 +6,7 @@ import HttpRequest from "./HttpRequest";
  */
 export default class Canvas {
   constructor(canvasSelector, canvasSize = 512) {
-    this.selector = canvasSelector;
+    this.canvasSelector = canvasSelector;
     this.canvasSize = canvasSize;
   }
 
@@ -14,19 +14,19 @@ export default class Canvas {
    * Make context of canvas and set size
    * @throws {Error}
    */
-  init() {
-    this.canvas = document.querySelector(`${this.selector}`);
+  start() {
+    console.log(this);
+    this.canvas = document.querySelector(`${this.canvasSelector}`);
 
     if (!this.canvas)
       throw Error(`canvas not found by selector ${this.selector}`);
-
     if (!this.canvas.getContext) {
       console.error("You browser don't support context for canvas");
       return;
     }
 
     //NOTE: WHy we must set canvas size in JS ?
-    // in css we set size of window)) but what mean size of window ???
+    // in css we set size of window)) (but what mean size of window ???)
     // in js size of canvas
     this.canvas.width = this.canvasSize;
     this.canvas.height = this.canvasSize;
@@ -86,22 +86,25 @@ export default class Canvas {
    * @param {Number} size
    */
   drawMatrix(size = 4) {
+    const colorType = size === 4 ? "hex" : "rgba";
     if (this.data && this.data[size]) {
-      const colorType = size === 4 ? "hex" : "rgba";
-      this.drawMatrixBySize(size, colorType);
+      this._drawMatrixBySize(size, colorType);
+      return;
     }
 
     this._getData(size)
       .then(res => {
         if (this.data) {
           this.data = { ...this.data, [size]: JSON.parse(res) };
+
+          this._drawMatrixBySize(size, colorType);
         } else {
           this.data = {
             [size]: JSON.parse(res)
           };
-        }
 
-        console.log(this.data);
+          this._drawMatrixBySize(size, colorType);
+        }
       })
       .catch(err => {
         console.error(err);

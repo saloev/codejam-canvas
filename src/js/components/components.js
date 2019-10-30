@@ -1,17 +1,12 @@
-//functions
-import topAppBar from "./topAppBar";
-import toolList from "./list";
+// material design components
+import material from "./material/material";
 
 //classes
-import Canvas from "./Canvas";
+import ToggleCanvasMatrix from "./ToggleCanvasMatrix";
 
 export default () => {
-  // init components
+  material();
 
-  topAppBar();
-
-  toolList();
-
-  const canvas = new Canvas("#canvas");
-  canvas.init();
+  const canvasMatrix = new ToggleCanvasMatrix(".mdc-form-wrap", "#canvas");
+  canvasMatrix.init();
 };

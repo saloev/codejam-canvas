@@ -1,11 +1,40 @@
 <section class="main-layout__canvas-size section section--fixed">
   <h2 class="sr-only">Canvas size</h2>
-  <ul class="mdc-list">
-    <li class="mdc-list-item" tabindex="0">
-      <span class="mdc-list-item__text">4 &times; 4</span>
-    </li>
-    <li class="mdc-list-item" tabindex="0">
-      <span class="mdc-list-item__text">32 &times; 32</span>
-    </li>
-  </ul>
+
+  <div class="mdc-form-wrap">
+    <div class="mdc-form-field">
+      <div class="mdc-radio">
+        <input
+          class="mdc-radio__native-control"
+          type="radio"
+          id="radio-1"
+          name="radios"
+          value="4"
+          checked
+        />
+        <div class="mdc-radio__background">
+          <div class="mdc-radio__outer-circle"></div>
+          <div class="mdc-radio__inner-circle"></div>
+        </div>
+      </div>
+      <label for="radio-1">4 &times; 4</label>
+    </div>
+    <div class="mdc-form-field">
+      <div class="mdc-radio">
+        <input
+          class="mdc-radio__native-control"
+          type="radio"
+          id="radio-2"
+          name="radios"
+          value="32"
+          checked
+        />
+        <div class="mdc-radio__background">
+          <div class="mdc-radio__outer-circle"></div>
+          <div class="mdc-radio__inner-circle"></div>
+        </div>
+      </div>
+      <label for="radio-2">32 &times; 32</label>
+    </div>
+  </div>
 </section>
